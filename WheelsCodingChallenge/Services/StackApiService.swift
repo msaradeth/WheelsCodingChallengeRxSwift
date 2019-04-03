@@ -28,7 +28,6 @@ class StackApiService: NSObject {
         params["order"] = "desc"
         
         HttpHelper.request(APIConstant.baseUrl, method: .get, params: params, success: { (responseObj) in
-            print(responseObj)
             guard let data = responseObj.data else { completion(users); return }
             do {
                 let service = try JSONDecoder().decode(UserService.self, from: data)
