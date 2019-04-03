@@ -31,7 +31,9 @@ class ListVC: UIViewController {
         viewModel.loadData { [weak self] (items) in
             guard let self = self else { return }
             self.viewModel.items = items
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }            
         }
     }
     
