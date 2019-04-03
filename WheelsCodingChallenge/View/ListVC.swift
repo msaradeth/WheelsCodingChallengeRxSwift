@@ -42,5 +42,12 @@ class ListVC: UIViewController {
         .disposed(by: disposeBag)
     }
 
-
+    @IBAction func addUser(_ sender: Any) {
+        let badge = Badge(bronze: 0, silver: 0, gold: 0)
+        let user = User.init(name: "", urlString: "", reputation: 0, badge: badge)
+        let viewModel = AddUserViewModel(user: user)
+        let vc = AddUserVC.createWith(title: "Add User", viewModel: viewModel)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
