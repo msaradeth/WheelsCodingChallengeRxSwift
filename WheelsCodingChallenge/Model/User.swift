@@ -12,9 +12,9 @@ struct UserService: Codable {
     var items: [User]
 }
 struct Badge: Codable {
-    var bronze: Int
-    var silver: Int
     var gold: Int
+    var silver: Int
+    var bronze: Int        
 }
 
 struct User: Codable {

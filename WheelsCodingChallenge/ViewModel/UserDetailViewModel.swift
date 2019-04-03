@@ -18,9 +18,11 @@ struct TextFieldItem {
 class UserDetailViewModel {
     var items: [TextFieldItem]
     var user: User {
-        let badge = Badge.init(bronze: items[2].text?.intValue() ?? 0,
-                               silver: items[3].text?.intValue() ?? 0,
-                               gold: items[4].text?.intValue() ?? 0)
+        let badge = Badge.init(
+            gold: items[2].text?.intValue() ?? 0,
+            silver: items[3].text?.intValue() ?? 0,
+            bronze: items[4].text?.intValue() ?? 0)
+        
         let user = User.init(name: items[0].text ?? "",
                              urlString: "personPlaceholder",
                              reputation: items[1].text?.intValue() ?? 0,
