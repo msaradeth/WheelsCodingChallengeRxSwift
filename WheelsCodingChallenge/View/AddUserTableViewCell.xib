@@ -39,7 +39,9 @@
                                 <constraints>
                                     <constraint firstItem="odN-fZ-XXd" firstAttribute="centerX" secondItem="0y7-EL-pnv" secondAttribute="centerX" id="0qg-AY-1Ib"/>
                                     <constraint firstItem="odN-fZ-XXd" firstAttribute="leading" secondItem="0y7-EL-pnv" secondAttribute="leading" id="BCG-2a-T45"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="GOl-6l-wZl"/>
                                     <constraint firstItem="odN-fZ-XXd" firstAttribute="centerY" secondItem="0y7-EL-pnv" secondAttribute="centerY" id="GVC-uG-nbb"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="Juc-r0-NKb"/>
                                     <constraint firstAttribute="height" constant="200" id="Kdw-sd-uSc"/>
                                     <constraint firstAttribute="trailing" secondItem="odN-fZ-XXd" secondAttribute="trailing" id="Kuh-yF-LHU"/>
                                 </constraints>
@@ -65,6 +67,7 @@
                                     <constraint firstAttribute="height" constant="200" id="dAb-QG-8Ov"/>
                                     <constraint firstItem="0Ue-rr-TsV" firstAttribute="leading" secondItem="iri-eQ-nwu" secondAttribute="leading" id="nJV-Kb-5xV"/>
                                     <constraint firstAttribute="trailing" secondItem="0Ue-rr-TsV" secondAttribute="trailing" id="nOQ-1e-18q"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="sRu-BW-mIG"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="XWm-Y8-C1S"/>
                             </view>
@@ -88,6 +91,7 @@
                                     <constraint firstItem="AA3-9C-LKs" firstAttribute="centerY" secondItem="ktK-fi-bAu" secondAttribute="centerY" id="itJ-LF-HjW"/>
                                     <constraint firstAttribute="height" constant="200" id="j4d-Pu-OHC"/>
                                     <constraint firstAttribute="trailing" secondItem="AA3-9C-LKs" secondAttribute="trailing" id="ne2-UT-7C2"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="npc-g4-vMO"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="7RO-RU-FFr"/>
                             </view>
@@ -109,6 +113,7 @@
                                     <constraint firstItem="T0e-RQ-g8Z" firstAttribute="centerY" secondItem="kE2-nQ-6ce" secondAttribute="centerY" id="Bbn-wn-MfB"/>
                                     <constraint firstItem="T0e-RQ-g8Z" firstAttribute="centerX" secondItem="kE2-nQ-6ce" secondAttribute="centerX" id="Nod-ir-ycJ"/>
                                     <constraint firstItem="T0e-RQ-g8Z" firstAttribute="leading" secondItem="kE2-nQ-6ce" secondAttribute="leading" id="WEt-Tf-U5E"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="cpT-ez-cwC"/>
                                     <constraint firstAttribute="height" constant="200" id="fg0-2l-rLH"/>
                                     <constraint firstAttribute="trailing" secondItem="T0e-RQ-g8Z" secondAttribute="trailing" id="hkB-Vv-r2F"/>
                                 </constraints>
@@ -130,6 +135,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="o6W-2N-D5Q" firstAttribute="centerY" secondItem="NXF-Tu-1DK" secondAttribute="centerY" id="3NY-h7-Wd2"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="4za-bq-dGH"/>
                                     <constraint firstItem="o6W-2N-D5Q" firstAttribute="centerX" secondItem="NXF-Tu-1DK" secondAttribute="centerX" id="Giy-21-0ob"/>
                                     <constraint firstItem="o6W-2N-D5Q" firstAttribute="leading" secondItem="NXF-Tu-1DK" secondAttribute="leading" id="JQ6-qa-1kh"/>
                                     <constraint firstAttribute="height" constant="200" id="TvJ-Zn-YAx"/>
@@ -152,6 +158,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bronzeBadge" destination="o6W-2N-D5Q" id="yix-99-EY7"/>
+                <outlet property="goldBadge" destination="AA3-9C-LKs" id="Agz-zN-rg8"/>
+                <outlet property="name" destination="odN-fZ-XXd" id="jCE-KZ-OVo"/>
+                <outlet property="reputation" destination="0Ue-rr-TsV" id="cdE-co-9tY"/>
+                <outlet property="silvelBadge" destination="T0e-RQ-g8Z" id="dW2-pt-wWV"/>
+            </connections>
             <point key="canvasLocation" x="576.79999999999995" y="261.31934032983509"/>
         </tableViewCell>
     </objects>

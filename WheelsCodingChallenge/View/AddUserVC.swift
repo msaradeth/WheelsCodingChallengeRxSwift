@@ -7,15 +7,10 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
 class AddUserVC: UIViewController {
-    let disposeBag = DisposeBag()
-    var viewModel: AddUserViewModel!
-    
-
     @IBOutlet weak var tableView: UITableView!
+    var viewModel: AddUserViewModel!
     
     static func createWith(title: String, viewModel: AddUserViewModel) -> AddUserVC {
         let storyboard = UIStoryboard.init(name: "StackUserList", bundle: nil)
@@ -27,12 +22,9 @@ class AddUserVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "AdduserTableViewCell", bundle: nil), forCellReuseIdentifier: AddUserTableViewCell.cellIdentifier)
-        
-        viewModel.subject.asObservable()
-            .bind(to: tableView.rx.items(cellIdentifier: AddUserTableViewCell.cellIdentifier, cellType: AddUserTableViewCell.self)) { (row, item, cell) in
-//                cell.con
-        }
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "AddUserTableViewCell", bundle: nil), forCellReuseIdentifier: AddUserTableViewCell.cellIdentifier)
     }
     
   
@@ -42,3 +34,25 @@ class AddUserVC: UIViewController {
     }
     
 }
+
+extension AddUserVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: AddUserTableViewCell.cellIdentifier, for: indexPath) as! AddUserTableViewCell
+        cell.configure(item: viewModel.user)
+        
+        return cell
+    }
+    
+}
+
+extension AddUserVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+}
+

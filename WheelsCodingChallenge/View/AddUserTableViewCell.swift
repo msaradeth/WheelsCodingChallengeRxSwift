@@ -11,8 +11,17 @@ import UIKit
 class AddUserTableViewCell: UITableViewCell {
     static let cellIdentifier = "Cell"
     
-    
-    func configure(item: User) {
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var reputation: UITextField!
+    @IBOutlet weak var goldBadge: UITextField!
+    @IBOutlet weak var silvelBadge: UITextField!
+    @IBOutlet weak var bronzeBadge: UITextField!
         
+    func configure(item: User) {
+        name.text = item.name
+        reputation.text = String(item.reputation)
+        goldBadge.text = String(item.badge.gold)
+        silvelBadge.text = String(item.badge.silver)
+        bronzeBadge.text = String(item.badge.bronze)
     }
 }
