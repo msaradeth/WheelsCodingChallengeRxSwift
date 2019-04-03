@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let stackApiService = StackApiService()
         let viewModel = ListViewModel(items: [], stackApiService: stackApiService)
         let rootVC = ListVC.createWith(title: "Stack Overflow Users", viewModel: viewModel)
-        let rootNav = UINavigationController(rootViewController: rootVC)
+        let rootNav = RootNav(rootViewController: rootVC)
         rootNav.navigationBar.prefersLargeTitles = true
         
         window = UIWindow(frame: UIScreen.main.bounds)
