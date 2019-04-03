@@ -10,6 +10,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol ListVCDelegate {
+    func addNewUser(user: User)
+}
+
 class ListVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let disposeBag = DisposeBag()
@@ -34,20 +38,24 @@ class ListVC: UIViewController {
         tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: ListTableViewCell.cellIdentifier)
         
         viewModel.subject.asObservable()
-            .bind(to: tableView.rx.items(cellIdentifier: ListTableViewCell.cellIdentifier, cellType: ListTableViewCell.self)) { [weak self]
+            .bind(to: tableView.rx.items(cellIdentifier: ListTableViewCell.cellIdentifier, cellType: ListTableViewCell.self)) { 
                 (row, item, cell) in
-                guard let self = self else { return }
-                cell.configure(item: item, row: row, delegate: self.viewModel)
+                cell.configure(item: item)
         }
         .disposed(by: disposeBag)
     }
 
     @IBAction func addUser(_ sender: Any) {
-        let badge = Badge(bronze: 0, silver: 0, gold: 0)
-        let user = User.init(name: "", urlString: "", reputation: 0, badge: badge)
-        let viewModel = AddUserViewModel(user: user)
-        let vc = AddUserVC.createWith(title: "Add User", viewModel: viewModel)
+        let viewModel = UserDetailViewModel(user: nil)
+        let vc = UserDetailVC.createWith(title: "Add User", viewModel: viewModel)
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
     
+}
+
+extension ListVC: ListVCDelegate {
+    func addNewUser(user: User) {
+        viewModel.items.append(user)
+    }
 }

@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="1004" y="-671"/>
         </scene>
-        <!--Add UserVC-->
+        <!--User DetailVC-->
         <scene sceneID="aB5-MA-zay">
             <objects>
-                <viewController storyboardIdentifier="AddUserVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FnP-Sl-g5H" customClass="AddUserVC" customModule="WheelsCodingChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddUserVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FnP-Sl-g5H" customClass="UserDetailVC" customModule="WheelsCodingChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aX0-Jg-SLf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +67,7 @@
                                     <action selector="addUserAction:" destination="FnP-Sl-g5H" eventType="touchUpInside" id="GVv-6W-cK3"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jW2-cK-4c0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jW2-cK-4c0">
                                 <rect key="frame" x="0.0" y="20" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>

@@ -12,10 +12,10 @@
 		0E03C4D722545F0E00A2C91F /* StackApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E03C4D622545F0E00A2C91F /* StackApiService.swift */; };
 		0E03C4D922545FAE00A2C91F /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E03C4D822545FAE00A2C91F /* HttpHelper.swift */; };
 		0E03C4DB2254649A00A2C91F /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E03C4DA2254649A00A2C91F /* Cache.swift */; };
-		0E03C4DD22547E1C00A2C91F /* AddUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E03C4DC22547E1C00A2C91F /* AddUserVC.swift */; };
-		0E03C4E022547E4000A2C91F /* AddUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E03C4DE22547E4000A2C91F /* AddUserTableViewCell.swift */; };
-		0E03C4E122547E4000A2C91F /* AddUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E03C4DF22547E4000A2C91F /* AddUserTableViewCell.xib */; };
-		0E03C4E32254836D00A2C91F /* AddUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E03C4E22254836D00A2C91F /* AddUserViewModel.swift */; };
+		0E03C4DD22547E1C00A2C91F /* UserDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E03C4DC22547E1C00A2C91F /* UserDetailVC.swift */; };
+		0E03C4E022547E4000A2C91F /* UserDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E03C4DE22547E4000A2C91F /* UserDetailTableViewCell.swift */; };
+		0E03C4E122547E4000A2C91F /* UserDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E03C4DF22547E4000A2C91F /* UserDetailTableViewCell.xib */; };
+		0E03C4E32254836D00A2C91F /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E03C4E22254836D00A2C91F /* UserDetailViewModel.swift */; };
 		0EFC61A3225453B0008766D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC61A2225453B0008766D0 /* AppDelegate.swift */; };
 		0EFC61A8225453B0008766D0 /* StackUserList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC61A6225453B0008766D0 /* StackUserList.storyboard */; };
 		0EFC61AA225453B2008766D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC61A9225453B2008766D0 /* Assets.xcassets */; };
@@ -55,10 +55,10 @@
 		0E03C4D622545F0E00A2C91F /* StackApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackApiService.swift; sourceTree = "<group>"; };
 		0E03C4D822545FAE00A2C91F /* HttpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpHelper.swift; sourceTree = "<group>"; };
 		0E03C4DA2254649A00A2C91F /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
-		0E03C4DC22547E1C00A2C91F /* AddUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserVC.swift; sourceTree = "<group>"; };
-		0E03C4DE22547E4000A2C91F /* AddUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserTableViewCell.swift; sourceTree = "<group>"; };
-		0E03C4DF22547E4000A2C91F /* AddUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddUserTableViewCell.xib; sourceTree = "<group>"; };
-		0E03C4E22254836D00A2C91F /* AddUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewModel.swift; sourceTree = "<group>"; };
+		0E03C4DC22547E1C00A2C91F /* UserDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailVC.swift; sourceTree = "<group>"; };
+		0E03C4DE22547E4000A2C91F /* UserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailTableViewCell.swift; sourceTree = "<group>"; };
+		0E03C4DF22547E4000A2C91F /* UserDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailTableViewCell.xib; sourceTree = "<group>"; };
+		0E03C4E22254836D00A2C91F /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		0EFC619F225453B0008766D0 /* WheelsCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheelsCodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFC61A2225453B0008766D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EFC61A7225453B0008766D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StackUserList.storyboard; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				0E03C4D222545E0C00A2C91F /* ListViewModel.swift */,
-				0E03C4E22254836D00A2C91F /* AddUserViewModel.swift */,
+				0E03C4E22254836D00A2C91F /* UserDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -192,9 +192,9 @@
 				0EFC61D822545D5A008766D0 /* ListVC.swift */,
 				0EFC61D4225455F7008766D0 /* ListTableViewCell.swift */,
 				0EFC61D5225455F7008766D0 /* ListTableViewCell.xib */,
-				0E03C4DC22547E1C00A2C91F /* AddUserVC.swift */,
-				0E03C4DE22547E4000A2C91F /* AddUserTableViewCell.swift */,
-				0E03C4DF22547E4000A2C91F /* AddUserTableViewCell.xib */,
+				0E03C4DC22547E1C00A2C91F /* UserDetailVC.swift */,
+				0E03C4DE22547E4000A2C91F /* UserDetailTableViewCell.swift */,
+				0E03C4DF22547E4000A2C91F /* UserDetailTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,7 +341,7 @@
 				0EFC61AD225453B2008766D0 /* LaunchScreen.storyboard in Resources */,
 				0EFC61D7225455F7008766D0 /* ListTableViewCell.xib in Resources */,
 				0EFC61AA225453B2008766D0 /* Assets.xcassets in Resources */,
-				0E03C4E122547E4000A2C91F /* AddUserTableViewCell.xib in Resources */,
+				0E03C4E122547E4000A2C91F /* UserDetailTableViewCell.xib in Resources */,
 				0EFC61A8225453B0008766D0 /* StackUserList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,12 +470,12 @@
 				0E03C4D722545F0E00A2C91F /* StackApiService.swift in Sources */,
 				0E03C4DB2254649A00A2C91F /* Cache.swift in Sources */,
 				0E03C4D922545FAE00A2C91F /* HttpHelper.swift in Sources */,
-				0E03C4DD22547E1C00A2C91F /* AddUserVC.swift in Sources */,
+				0E03C4DD22547E1C00A2C91F /* UserDetailVC.swift in Sources */,
 				0EFC61A3225453B0008766D0 /* AppDelegate.swift in Sources */,
 				0E03C4D322545E0C00A2C91F /* ListViewModel.swift in Sources */,
-				0E03C4E32254836D00A2C91F /* AddUserViewModel.swift in Sources */,
+				0E03C4E32254836D00A2C91F /* UserDetailViewModel.swift in Sources */,
 				0E03C4D522545E2700A2C91F /* User.swift in Sources */,
-				0E03C4E022547E4000A2C91F /* AddUserTableViewCell.swift in Sources */,
+				0E03C4E022547E4000A2C91F /* UserDetailTableViewCell.swift in Sources */,
 				0EFC61D6225455F7008766D0 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

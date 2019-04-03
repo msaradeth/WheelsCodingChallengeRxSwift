@@ -9,14 +9,14 @@
 import Foundation
 import RxSwift
 
-protocol ListViewModelDelegate {
-    var items:[User] { get set }
-}
-
-class ListViewModel: ListViewModelDelegate {
+class ListViewModel {
     let disposeBag = DisposeBag()
     var subject: BehaviorSubject<[User]>
-    var items:[User]
+    var items: [User] {
+        didSet {
+            subject.onNext(items)
+        }
+    }
     var stackApiService: StackApiService
     
     init(items: [User], stackApiService: StackApiService) {
@@ -29,6 +29,7 @@ class ListViewModel: ListViewModelDelegate {
         stackApiService.loadData()
             .subscribe(onSuccess: { [weak self] (items) in
                 guard let self = self else { return }
+                self.items = items
                 self.subject.onNext(items)
             }) { (error) in
                 print(error.localizedDescription)

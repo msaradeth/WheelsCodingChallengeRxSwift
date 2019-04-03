@@ -14,12 +14,7 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var reputation: UILabel!
     
-    var delegate: ListViewModelDelegate?
-    var row: Int!
-    
-    func configure(item: User, row: Int, delegate: ListViewModelDelegate?) {
-        self.row = row
-        self.delegate = delegate
+    func configure(item: User) {
         name.text = item.name
         reputation.text = String(item.reputation)
         
