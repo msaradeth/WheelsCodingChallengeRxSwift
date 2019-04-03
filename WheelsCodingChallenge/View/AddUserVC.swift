@@ -22,7 +22,6 @@ class AddUserVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "AddUserTableViewCell", bundle: nil), forCellReuseIdentifier: AddUserTableViewCell.cellIdentifier)
     }
@@ -48,11 +47,5 @@ extension AddUserVC: UITableViewDataSource {
         return cell
     }
     
-}
-
-extension AddUserVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
 }
 
