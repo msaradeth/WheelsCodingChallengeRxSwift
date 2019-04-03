@@ -19,30 +19,27 @@ enum APIConstant {
 
 class StackApiService: NSObject {
     
-    func loadData() -> Single<[User]> {
-        return Single<[User]>.create { single in
-            
-            var params: [String:String] = [:]
-            params["site"] = "stackoverflow"
-            params["page"] = "1"
-            params["sort"] = "reputation"
-            params["order"] = "desc"
-            
-            HttpHelper.request(APIConstant.baseUrl, method: .get, params: params, success: { (responseObj) in
-                guard let data = responseObj.data else { single(.error(APIError.parseError)); return }
-                do {
-                    let responseObj = try JSONDecoder.init().decode(ResponseObj.self, from: data)
-                    single(.success(responseObj.items))
-                }catch let error {
-                    print(error.localizedDescription)
-                    single(.error(APIError.parseError))
-                }
-            }, failure: { (error) in
+    func loadData(completion: @escaping ([User]) -> Void) {
+        var users: [User] = []
+        var params: [String:String] = [:]
+        params["site"] = "stackoverflow"
+        params["page"] = "1"
+        params["sort"] = "reputation"
+        params["order"] = "desc"
+        
+        HttpHelper.request(APIConstant.baseUrl, method: .get, params: params, success: { (responseObj) in
+            guard let data = responseObj.data else { completion(users); return }
+            do {
+                let service = try JSONDecoder().decode(ResponseObj.self, from: data)
+                users = service.items
+            }catch let error {
                 print(error.localizedDescription)
-                single(.error(APIError.parseError))
-            })
+            }
+            completion(users)
             
-            return Disposables.create()
+        }) { (error) in
+            print(error.localizedDescription)
+            completion(users)
         }
-    }
+    }    
 }

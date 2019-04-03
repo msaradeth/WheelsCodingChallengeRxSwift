@@ -27,22 +27,19 @@ class ListVC: UIViewController {
         return vc
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupRx()
-        viewModel.loadData()
+        setup()        
+        viewModel.loadData { [weak self] (items) in
+            guard let self = self else { return }
+            self.viewModel.items = items
+            self.tableView.reloadData()
+        }
     }
     
-    func setupRx() {
+    func setup() {
+        tableView.dataSource = self
         tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: ListTableViewCell.cellIdentifier)
-        
-        viewModel.subject.asObservable()
-            .bind(to: tableView.rx.items(cellIdentifier: ListTableViewCell.cellIdentifier, cellType: ListTableViewCell.self)) { 
-                (row, item, cell) in
-                cell.configure(item: item)
-        }
-        .disposed(by: disposeBag)
     }
 
     @IBAction func addUser(_ sender: Any) {
@@ -51,11 +48,23 @@ class ListVC: UIViewController {
         vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
 extension ListVC: ListVCDelegate {
     func addNewUser(user: User) {
         viewModel.items.append(user)
+        tableView.reloadData()
+    }
+}
+
+extension ListVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.cellIdentifier, for: indexPath) as! ListTableViewCell
+        cell.configure(item: viewModel[indexPath.row])
+        return cell
     }
 }

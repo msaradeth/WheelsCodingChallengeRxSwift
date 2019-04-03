@@ -44,15 +44,11 @@ extension UserDetailVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: UserDetailTableViewCell.cellIdentifier, for: indexPath) as! UserDetailTableViewCell
-        
         cell.textField.delegate = self
         cell.configure(item: viewModel.items[indexPath.row], row: indexPath.row)
-        
         return cell
     }
-    
 }
 
 extension UserDetailVC: UITableViewDelegate {
@@ -64,7 +60,6 @@ extension UserDetailVC: UITableViewDelegate {
 
 extension UserDetailVC: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print(textField.tag, textField.text)
         guard let text = textField.text else { return }
         viewModel.items[textField.tag].text = text
     }

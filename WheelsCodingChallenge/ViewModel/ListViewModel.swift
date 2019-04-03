@@ -7,34 +7,22 @@
 //
 
 import Foundation
-import RxSwift
 
 class ListViewModel {
-    let disposeBag = DisposeBag()
-    var subject: BehaviorSubject<[User]>
-    var items: [User] {
-        didSet {
-            subject.onNext(items)
-        }
-    }
+    var items: [User]
     var stackApiService: StackApiService
     
     init(items: [User], stackApiService: StackApiService) {
         self.items = items
         self.stackApiService = stackApiService
-        self.subject = BehaviorSubject<[User]>(value: items)
     }
     
-    func loadData() {
-        stackApiService.loadData()
-            .subscribe(onSuccess: { [weak self] (items) in
-                guard let self = self else { return }
-                self.items = items
-                self.subject.onNext(items)
-            }) { (error) in
-                print(error.localizedDescription)
-            }
-            .disposed(by: disposeBag)
+    subscript(index: Int) -> User {
+        return items[index]
+    }
+    
+    func loadData(completion: @escaping ([User]) -> Void) {
+        stackApiService.loadData(completion: completion)
     }
     
 }
