@@ -13,4 +13,8 @@ class Cache: NSObject {
     static let shared = Cache()
     
     var image: [String:UIImage] = [:]
+    
+    override init() {
+        image["personPlaceholder"] = UIImage(named: "personPlaceholder")
+    }
 }
