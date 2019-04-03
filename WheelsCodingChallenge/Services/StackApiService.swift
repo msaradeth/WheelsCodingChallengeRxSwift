@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import RxSwift
+ 
 
 enum APIError: Error {
     case parseError
@@ -30,7 +30,7 @@ class StackApiService: NSObject {
         HttpHelper.request(APIConstant.baseUrl, method: .get, params: params, success: { (responseObj) in
             guard let data = responseObj.data else { completion(users); return }
             do {
-                let service = try JSONDecoder().decode(ResponseObj.self, from: data)
+                let service = try JSONDecoder().decode(UserService.self, from: data)
                 users = service.items
             }catch let error {
                 print(error.localizedDescription)

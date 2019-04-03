@@ -8,8 +8,6 @@
 
 import Foundation
 import Alamofire
-import RxSwift
-
 
 
 final class HttpHelper: NSObject {

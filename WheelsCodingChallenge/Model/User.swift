@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ResponseObj: Codable {
+struct UserService: Codable {
     var items: [User]
 }
 struct Badge: Codable {

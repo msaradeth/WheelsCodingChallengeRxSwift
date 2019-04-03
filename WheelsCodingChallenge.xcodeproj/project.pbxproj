@@ -26,6 +26,8 @@
 		0EFC61D7225455F7008766D0 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EFC61D5225455F7008766D0 /* ListTableViewCell.xib */; };
 		0EFC61D922545D5A008766D0 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC61D822545D5A008766D0 /* ListVC.swift */; };
 		5EB3AD9B22552FE8002D56F1 /* RootNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3AD9A22552FE8002D56F1 /* RootNav.swift */; };
+		5EB3ADA022553C62002D56F1 /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3AD9F22553C62002D56F1 /* Int+Ext.swift */; };
+		5EB3ADA222553C6D002D56F1 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3ADA122553C6D002D56F1 /* String+Ext.swift */; };
 		7863DD01C2BB68408213D028 /* Pods_WheelsCodingChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84A5043BDF6B99C151EB0D1 /* Pods_WheelsCodingChallengeUITests.framework */; };
 		8D8B61D93970052F5AD9D105 /* Pods_WheelsCodingChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057BE4558FFF9F1162471308 /* Pods_WheelsCodingChallenge.framework */; };
 		BF3CFB1606773EF5AD6F5EA8 /* Pods_WheelsCodingChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0334E9E707888F3B35F764 /* Pods_WheelsCodingChallengeTests.framework */; };
@@ -76,6 +78,8 @@
 		0EFC61D5225455F7008766D0 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		0EFC61D822545D5A008766D0 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		5EB3AD9A22552FE8002D56F1 /* RootNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNav.swift; sourceTree = "<group>"; };
+		5EB3AD9F22553C62002D56F1 /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
+		5EB3ADA122553C6D002D56F1 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		8B0A1777C208D2836E5EB869 /* Pods-WheelsCodingChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelsCodingChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-WheelsCodingChallengeUITests/Pods-WheelsCodingChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B7942EE17B9A068D69C23BAE /* Pods-WheelsCodingChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelsCodingChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-WheelsCodingChallengeTests/Pods-WheelsCodingChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C84A5043BDF6B99C151EB0D1 /* Pods_WheelsCodingChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheelsCodingChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +142,7 @@
 		0EFC61A1225453B0008766D0 /* WheelsCodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				5EB3AD9C22553BA4002D56F1 /* Common */,
 				0EFC61D3225453CE008766D0 /* Model */,
 				0EFC61D2225453C9008766D0 /* View */,
 				0EFC61D1225453C6008766D0 /* ViewModel */,
@@ -218,6 +223,15 @@
 				C84A5043BDF6B99C151EB0D1 /* Pods_WheelsCodingChallengeUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5EB3AD9C22553BA4002D56F1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5EB3AD9F22553C62002D56F1 /* Int+Ext.swift */,
+				5EB3ADA122553C6D002D56F1 /* String+Ext.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		97BF1CBCA4E315D95A948BE8 /* Pods */ = {
@@ -472,10 +486,12 @@
 				0EFC61D922545D5A008766D0 /* ListVC.swift in Sources */,
 				0E03C4D722545F0E00A2C91F /* StackApiService.swift in Sources */,
 				0E03C4DB2254649A00A2C91F /* Cache.swift in Sources */,
+				5EB3ADA222553C6D002D56F1 /* String+Ext.swift in Sources */,
 				0E03C4D922545FAE00A2C91F /* HttpHelper.swift in Sources */,
 				0E03C4DD22547E1C00A2C91F /* UserDetailVC.swift in Sources */,
 				0EFC61A3225453B0008766D0 /* AppDelegate.swift in Sources */,
 				0E03C4D322545E0C00A2C91F /* ListViewModel.swift in Sources */,
+				5EB3ADA022553C62002D56F1 /* Int+Ext.swift in Sources */,
 				0E03C4E32254836D00A2C91F /* UserDetailViewModel.swift in Sources */,
 				0E03C4D522545E2700A2C91F /* User.swift in Sources */,
 				5EB3AD9B22552FE8002D56F1 /* RootNav.swift in Sources */,

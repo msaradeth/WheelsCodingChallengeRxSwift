@@ -7,19 +7,7 @@
 //
 
 import Foundation
-import RxSwift
-
-extension Int {
-    func stringValue() -> String {
-        return String(self)
-    }
-}
-extension String {
-    func intValue() -> Int {
-        return Int(self) ?? 0
-    }
-}
-
+import UIKit
 
 struct TextFieldItem {
     var text: String?
@@ -67,3 +55,6 @@ class UserDetailViewModel {
         }
     }
 }
+
+
+

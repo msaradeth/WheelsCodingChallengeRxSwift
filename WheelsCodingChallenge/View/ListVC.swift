@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
+
 
 protocol ListVCDelegate {
     func addNewUser(user: User)
@@ -16,7 +15,6 @@ protocol ListVCDelegate {
 
 class ListVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    let disposeBag = DisposeBag()
     var viewModel: ListViewModel!
     
     static func createWith(title: String, viewModel: ListViewModel) -> ListVC {

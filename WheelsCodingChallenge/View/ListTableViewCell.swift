@@ -16,7 +16,7 @@ class ListTableViewCell: UITableViewCell {
     
     func configure(item: User) {
         name.text = item.name
-        reputation.text = String(item.reputation)
+        reputation.text = item.reputation.formatWithCommas()
         
         if let image = Cache.shared.image[item.urlString] {
             gravator.image = image
