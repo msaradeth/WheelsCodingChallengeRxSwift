@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString* placeHolder;
 @property UIKeyboardType keyboardType;
 
++ (NSMutableArray*) loadData;
+
 - (id)initWithData:(NSString*) text
        placeHolder:(NSString*) placeHolder
       keyboardType:(UIKeyboardType) keyboardType;

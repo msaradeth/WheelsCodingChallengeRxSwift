@@ -8,13 +8,14 @@
 
 #import "ListTableCell.h"
 #import "WheelsCodingChallenge-Swift.h"
+#import "UILabel+Ext.h"
 
 @implementation ListTableCell
 
 
 - (void)configure:(User*)item {
     self.name.text = item.name;
-    self.reputation.text = [self formatWithCommas:item.reputation.integerValue];
+    self.reputation.text = [item.reputation formatWithCommas];
     self.goldBadge.text = item.badge.gold.stringValue;
     self.silverBadge.text = item.badge.silver.stringValue;
     self.bronzeBadge.text = item.badge.bronze.stringValue;
@@ -39,24 +40,11 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
-    [self circleShape:self.goldCircle];
-    [self circleShape:self.silverCircle];
-    [self circleShape:self.bronzeCircle];
+    [self.goldCircle roundedDot];
+    [self.silverCircle roundedDot];
+    [self.bronzeCircle roundedDot];
 }
 
 
-// Helper Methods
-- (NSString*)formatWithCommas:(NSInteger)number {
-    NSNumberFormatter * formatter = [NSNumberFormatter new];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    NSString *numberWithCommas =  [formatter stringFromNumber:[NSNumber numberWithInteger:number]];
-    return numberWithCommas;
-}
-
-- (void)circleShape:(UILabel*)label {
-    label.layer.cornerRadius = label.bounds.size.height / 2;
-    label.layer.masksToBounds = true;
-}
 
 @end

@@ -22,4 +22,15 @@
     return self;
 }
 
+
++ (NSMutableArray*) loadData {
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+    [items addObject:[[TextFieldItem alloc] initWithData:@"" placeHolder:@"Enter name" keyboardType:UIKeyboardTypeNamePhonePad] ];
+    [items addObject:[[TextFieldItem alloc] initWithData:@"" placeHolder:@"Enter reputation" keyboardType:UIKeyboardTypeNumberPad] ];
+    [items addObject:[[TextFieldItem alloc] initWithData:@"" placeHolder:@"Enter gold badge" keyboardType:UIKeyboardTypeNumberPad] ];
+    [items addObject:[[TextFieldItem alloc] initWithData:@"" placeHolder:@"Enter silver badge" keyboardType:UIKeyboardTypeNumberPad] ];
+    [items addObject:[[TextFieldItem alloc] initWithData:@"" placeHolder:@"Enter bronze badge" keyboardType:UIKeyboardTypeNumberPad] ];
+    return items;
+}
+
 @end

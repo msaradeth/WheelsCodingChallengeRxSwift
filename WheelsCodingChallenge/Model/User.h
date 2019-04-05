@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Badge.h"
+#import "NSNumber+Ext.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

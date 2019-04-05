@@ -16,9 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AddUserVC : UIViewController <UITableViewDataSource, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray *items;
 @property (weak, nonatomic) id<ListVCDelegate> delegate;
 
+@property (strong, nonatomic) NSMutableArray *items;
 @end
 
 NS_ASSUME_NONNULL_END
